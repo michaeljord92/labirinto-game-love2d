@@ -1,5 +1,6 @@
 local States = require('states')
 local World = require('world')
+local Entities = require('entities')
 
 
 local key_map = {
@@ -30,6 +31,28 @@ local key_map = {
         -- Sai do jogo
         else
             States.sair()
+        end
+    end,
+
+    -- Move o player
+    w = function ()
+        if World.state == "play" then
+            Entities.player.entitie:up()
+        end
+    end,
+    s = function ()
+        if World.state == "play" then
+            Entities.player.entitie:down()
+        end
+    end,
+    a = function ()
+        if World.state == "play" then
+            Entities.player.entitie:left()
+        end
+    end,
+    d = function ()
+        if World.state == "play" then
+            Entities.player.entitie:right()
         end
     end,
 }
