@@ -14,7 +14,7 @@ world.collides = function (entity1, entity2)
 end
 
 world.mouseEntityAngle = function (entity)
-    return math.atan(love.mouse.getY()-entity.y, love.mouse.getX()-entity.x )
+    return math.atan2(love.mouse.getY()-entity.y, love.mouse.getX()-entity.x )
 end
 
 world.drawGround = function ()

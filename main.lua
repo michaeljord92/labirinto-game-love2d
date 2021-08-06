@@ -24,7 +24,7 @@ function love.load()
     })
 end
 
-function love.update()
+function love.update(dt)
     if States[World.state] then
         States[World.state].update(dt) 
     end
