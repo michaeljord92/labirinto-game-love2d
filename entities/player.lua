@@ -20,26 +20,82 @@ return function (x, y, sprite)
     entity.radius = 25
 
     entity.up = function (self)
-        if Tilemap[(self.y-32)/64][(self.x-32)/64+1] ~= 1 then
-            self.y = self.y - self.speed   
+        local x = (self.x-32)/64 + 1
+        local y = (self.y-32)/64 + 1
+        local sizeTable = 0
+
+        for _ in pairs(Tilemap) do
+            sizeTable = sizeTable + 1
         end
+
+        if y - 1 <= sizeTable and y > 1 then
+            if Tilemap[y - 1][x] ~= 1 then
+                self.y = self.y - self.speed   
+            end
+        else
+            if y > 1 then
+                self.y = self.y - self.speed                   
+            end
+        end
+        
         self.rotation = math.pi * 1.5
     end
     entity.down = function (self)
-        if Tilemap[(self.y-32)/64+2][(self.x-32)/64+1] ~= 1 then
-            self.y = self.y + self.speed
+        local x = (self.x-32)/64 + 1
+        local y = (self.y-32)/64 + 1
+        local sizeTable = 0
+
+        for _ in pairs(Tilemap) do
+            sizeTable = sizeTable + 1
         end
+
+        if y + 1 <= sizeTable and  y + 1 > 0 then
+            if Tilemap[y + 1][x] ~= 1 then
+                self.y = self.y + self.speed
+            end 
+        else
+            self.y = self.y + self.speed        
+        end
+        
         self.rotation = math.pi * 0.5
     end
     entity.left = function (self)
-        if Tilemap[(self.y-32)/64+1][(self.x-32)/64] ~= 1 then
-            self.x = self.x - self.speed
-        end    
+        local x = (self.x-32)/64 + 1
+        local y = (self.y-32)/64 + 1
+        local sizeTable = 0
+
+        for _ in pairs(Tilemap) do
+            sizeTable = sizeTable + 1
+        end
+
+        if y <= sizeTable and y > 0 and x - 1 > 0 then
+            if Tilemap[y][x - 1] ~= 1 then
+                self.x = self.x - self.speed
+            end
+        else
+            if x - 1 > 0 then
+                self.x = self.x - self.speed 
+            end
+        end
         self.rotation = math.pi * 1
     end
     entity.right = function (self)
-        if Tilemap[(self.y-32)/64+1][(self.x-32)/64+2] ~= 1 then
-            self.x = self.x + self.speed
+        local x = (self.x-32)/64 + 1
+        local y = (self.y-32)/64 + 1
+        local sizeTable = 0
+
+        for _ in pairs(Tilemap) do
+            sizeTable = sizeTable + 1
+        end
+
+        if y <= sizeTable and  y > 0 and x > 0 then
+            if Tilemap[y][x + 1] ~= 1 then
+                self.x = self.x + self.speed
+            end
+        else 
+            if x > 0 then
+                self.x = self.x + self.speed
+            end
         end
         self.rotation = math.pi * 0
     end
