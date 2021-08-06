@@ -1,11 +1,17 @@
--- Programa: Aula 5 - tilemaps, tilesets e animação
+-- Programa: Aula 5.0 a 5.4 - tilemaps, tilesets e animação
 -- Autor: Michael Jordan S Chagas
 -- Curso: Ciência da Computação - UFMT-CUA
 -- Disclina: Design e Programação de Games (Opt)
 -- Docente: Maxwell Silva Carmo
 -- Data: 2021-08-05
 -- Update: 2021-08-05
---
+-- 
+-- Este programa simula um jogo de labirinto.
+-- Os comandos e controles do atirador são:
+--      - mover para cima:      'w'
+--      - mover para baixo:     's'
+--      - mover para esquerda:  'a'
+--      - mover para direita:   'd'
 -------------------------------------------------------
 
 local Display = require('display')
