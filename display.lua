@@ -1,5 +1,5 @@
-WIDTH = 1024
-HEIGHT = 576
+WIDTH = 854
+HEIGHT = 480
 
 local display = {}
 display.title = "Aula 5 - tilemaps, tilesets e animação"
