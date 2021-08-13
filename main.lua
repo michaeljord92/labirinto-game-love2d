@@ -4,7 +4,7 @@
 -- Disclina: Design e Programação de Games (Opt)
 -- Docente: Maxwell Silva Carmo
 -- Data: 2021-08-05
--- Update: 2021-08-05
+-- Update: 2021-08-06
 -- 
 -- Este programa simula um jogo de labirinto.
 -- Os comandos e controles do atirador são:
